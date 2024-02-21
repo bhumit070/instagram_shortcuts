@@ -1,0 +1,27 @@
+{
+	"manifest_version": 3,
+	"name": "Instagram Shortcuts",
+	"version": "1.0",
+	"description": "Shortcuts for instagram",
+	"permissions": [
+		"activeTab"
+	],
+	"action": {
+		"default_popup": "popup.html"
+	},
+	"background": {
+		"service_worker": "background.js"
+	},
+	"content_scripts": [
+		{
+			"matches": [
+				"https://*.instagram.com/",
+				"https://*.instagram.com/*",
+				"https://instagram.com/*"
+			],
+			"js": [
+				"content_script.js"
+			]
+		}
+	]
+}
